@@ -58,7 +58,7 @@
 			//RequestAminFrame by Paul Irish
 			//http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
 			window.requestAnimFrame = (function(){
-				return	window.requestAnimationFrame		||
+				return	window.requestAnimationFrame			||
 						window.webkitRequestAnimationFrame	||
 						window.mozRequestAnimationFrame		||
 						window.oRequestAnimationFrame		||
@@ -69,10 +69,10 @@
 			})();
 			
 			window.cancelRequestAnimFrame = ( function() {
-				return window.cancelAnimationFrame				||
+				return window.cancelAnimationFrame			||
 					window.webkitCancelRequestAnimationFrame	||
 					window.mozCancelRequestAnimationFrame		||
-					window.oCancelRequestAnimationFrame			||
+					window.oCancelRequestAnimationFrame		||
 					window.msCancelRequestAnimationFrame		||
 					clearTimeout
 			} )();
