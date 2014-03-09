@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>simpLoad Demo</title>
+		<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.0/normalize.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+		
+		<header class="center">
+			<h1>simpLoad</h1>
+			<p>A simple way to indicate AJAX-loading</p>
+		</header>
+		<main>
+			
+			<section id="body-demo" class="center">
+				<span id="spin-body" class="button">Apply simpLoad to the whole page</span>
+			</section>
+			
+			<section id="box-test" class="center" >
+				<div class="button spin-me">
+					Apply simpLoad to me...
+				</div>
+				<div class="button spin-me rounded-three">
+					.. or to me ..
+				</div>
+				<div class="button spin-me" style="border-radius: 70px 0 50% 20px">
+					.. or to me
+				</div>
+			</section>
+			
+			<section id="multiple-box-test" class="center">
+				<span id="spin-boxes" class="button">Apply simpLoad to elements bellow</span>
+				<div id="box-container">
+					<div class="box-element"></div>
+					<div class="box-element" style="min-width: 100px; width: 150px"></div>
+					<div class="box-element"></div>
+					<div class="box-element"></div>
+					<div class="box-element"></div>
+					<div class="box-element"></div>
+				</div>
+			</section>
+
+		</main>
+		<footer>
+			
+		</footer>
+
+	</body>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="simpLoad.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+			$('body').css('border','10px #ccc solid');
+
+			//Body demo
+			$('#spin-body').click(function(){
+				$('body').simpLoad('start');
+				setTimeout(function(){ 
+					$('body').simpLoad('stop');
+				}, 2000);
+			});
+
+			//Single element demo
+			$('.spin-me').click(function(){
+				var self = $(this);
+				self.simpLoad('start');
+				setTimeout(function(){ 
+					self.simpLoad('stop');
+				}, 2000);
+			});
+
+			//Multiple element demo
+			$('#spin-boxes').click(function(){
+				$('.box-element').each(function(){
+					$(this).simpLoad('start');
+				});
+				setTimeout(function(){ 
+					$('.box-element').simpLoad('stop');
+				}, 2000);
+			});
+
+		});
+	</script>
+
+</html>
+
