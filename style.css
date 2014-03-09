@@ -1,0 +1,209 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,200,300,700);
+
+* {
+	-webkit-transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-ms-transition: 0.2s ease all;
+	-o-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #4D555F;
+}
+
+body {
+	box-sizing: border-box;
+	height: 100%;
+	/*border: 5px #ccc solid;*/
+	background: #efefef;
+	position: relative;
+}
+
+header, #main, footer{
+	width: 100%;
+	max-width: 1040px;
+	margin: 0 auto;
+}
+
+
+
+/************************************/
+header {
+	padding: 25px;
+	width: 33.33%;
+	min-width: 350px;
+}
+
+header h1{
+	font-size: 3.4em;
+	font-weight: 600;
+	text-shadow: 0 1px #fff;
+	margin: 15px;
+	padding: 10px;
+	border-bottom: 1px #4D555F solid;
+} 
+ header p {
+ 	font-size: 1em;
+ 	font-style: italic;
+ 	font-weight: 400;
+ 	margin: 0;
+ }
+
+/************************************/
+
+section{
+	margin-bottom: 40px;
+	padding: 35px 0 ;
+	width: 100%;
+}
+section:nth-child(even){
+	left:0;
+	background: #ddd;
+}
+
+/************************************/
+
+.spin-me, .box-element{
+	padding: 100px 0 !important;
+	width: 28%;
+	min-width: 250px;
+	max-width: 300px;
+	margin: 20px;
+	display: inline-block;
+}
+
+/************************************/
+
+#spin-boxes {
+	margin-bottom: 30px;
+}
+.box-element {
+	height: 140px;
+	background-color: #98A3B1;
+	border: 2px #78818B solid;
+}
+
+
+/************************************/
+/************** CLASSES *************/
+/************************************/
+
+.button {
+	padding: 10px 18px;
+	background-color: #626B77;
+	color: #efefef;
+	font-weight: 300;
+	border: 2px #4D555F solid;
+	cursor: pointer;
+	display: inline-block;
+}
+.button:hover {
+	background: #748397;
+	border: 2px #656F7A solid;
+	box-shadow: 0 2px 4px #aaa;
+	-webkit-animation: blob 0.6s;
+	-moz-animation: blob 0.6s;
+	-o-animation: blob 0.6s;
+	animation: blob 0.6s;
+}
+
+.center{
+	text-align: center;
+}
+
+.pullright {
+	float: right;
+}
+.pullleft {
+	float: left;
+}
+
+.rounded-one {
+	border-radius: 3px;
+}
+.rounded-two {
+	border-radius: 20px;
+}
+.rounded-three {
+	border-radius: 80px;
+}
+
+/************************************/
+/************ ANIMATIONS ************/
+/************************************/
+
+@-webkit-keyframes blob {
+	25% {
+		-webkit-transform: scale(1.02);
+		transform: scale(1.02);
+	}
+	0%, 100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-moz-keyframes blob {
+	25% {
+		-moz-transform: scale(1.02);
+		transform: scale(1.02);
+	}
+	0%, 100% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-o-keyframes blob {
+	25% {
+		-o-transform: scale(1.02);
+		transform: scale(1.02);
+	}
+	0%, 100% {
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@-ms-keyframes blob {
+	25% {
+		-ms-transform: scale(1.02);
+		transform: scale(1.02);
+	}
+	0%, 100% {
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes blob {
+	25% {
+		transform: scale(1.02);
+	}
+	0%, 100% {
+		transform: scale(1);
+	}
+}
+
+
+/************************************/
+/************************************/
+/************************************/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
