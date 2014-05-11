@@ -2,7 +2,7 @@ simpLoad.js
 ========
 
 ## Description
-A simple, universal AJAX spinner that just needs to know when to start
+A simple, universal AJAX spinner that just needs to know when to start. Here's a [demo](http://anzorasadov.github.com/simpLoad/).
 
 
 ## Instructions
