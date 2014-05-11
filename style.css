@@ -109,7 +109,9 @@ section:nth-child(even){
 	-ms-user-select: none;
 	user-select: none;
 }
-
+..hljs{
+	background: none !important;
+}
 
 /************************************/
 /************** CLASSES *************/
