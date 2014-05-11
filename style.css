@@ -43,7 +43,7 @@ header h1{
 	margin: 15px;
 	padding: 10px;
 	border-bottom: 1px #4D555F solid;
-} 
+}
  header p {
  	font-size: 1em;
  	font-style: italic;
@@ -85,6 +85,31 @@ section:nth-child(even){
 	border: 2px #78818B solid;
 }
 
+/************************************/
+
+.code-box{
+	background-color: #fafafa;
+	width: 100%;
+	max-width: 500px;
+	border: 1px #ccc solid;
+	margin: 0px auto;
+	text-align: left;
+	padding: 0 16px;
+	display: none;
+}
+
+.view-code-btn {
+	margin-bottom: 2px;
+	color: #81858A;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 
 /************************************/
 /************** CLASSES *************/
@@ -98,6 +123,12 @@ section:nth-child(even){
 	border: 2px #4D555F solid;
 	cursor: pointer;
 	display: inline-block;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .button:hover {
 	background: #748397;
@@ -195,15 +226,15 @@ section:nth-child(even){
 	line-height: 0;
 	height: 0;
 }
- 
+
 .clearfix {
 	display: inline-block;
 }
- 
+
 html[xmlns] .clearfix {
 	display: block;
 }
- 
+
 * html .clearfix {
 	height: 1%;
 }
