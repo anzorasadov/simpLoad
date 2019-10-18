@@ -1,28 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>simpLoad Demo</title>
-		<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.0/normalize.css">
-		<link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>simpLoad Demo</title>
+    <link
+      rel="stylesheet"
+      href="http://necolas.github.io/normalize.css/3.0.0/normalize.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="http://yandex.st/highlightjs/8.0/styles/default.min.css"
+    />
+  </head>
 
-	<body>
-
-		<header class="center">
-			<h1>simpLoad</h1>
-			<p>A simple way to indicate AJAX-loading</p>
-		</header>
-		<main>
-
-			<section id="body-demo" class="center">
-				<span id="spin-body" class="button">Apply simpLoad to the whole page</span>
-				<p class="view-code-btn">
-					View Code
-				</p>
-				<div class="code-box">
-<pre><code>$('#button').click(function(){
+  <body>
+    <header class="center">
+      <h1>simpLoad</h1>
+      <p>A simple way to indicate AJAX-loading</p>
+    </header>
+    <main>
+      <section id="body-demo" class="center">
+        <span id="spin-body" class="button"
+          >Apply simpLoad to the whole page</span
+        >
+        <p class="view-code-btn">
+          View Code
+        </p>
+        <div class="code-box">
+          <pre><code>$('#button').click(function(){
 
     //Start Simpload
     $('body').simpLoad('start');
@@ -33,24 +39,24 @@
     }, 2000);
 
 });</code></pre>
-				</div>
-			</section>
+        </div>
+      </section>
 
-			<section id="box-test" class="center" >
-				<div class="button spin-me">
-					Apply simpLoad to me...
-				</div>
-				<div class="button spin-me rounded-three">
-					.. or to me ..
-				</div>
-				<div class="button spin-me" style="border-radius: 70px 0 50% 20px">
-					.. or to me
-				</div>
-				<p class="view-code-btn">
-					View Code
-				</p>
-				<div class="code-box">
-<pre><code>$('.clicked').click(function(){
+      <section id="box-test" class="center">
+        <div class="button spin-me">
+          Apply simpLoad to me...
+        </div>
+        <div class="button spin-me rounded-three">
+          .. or to me ..
+        </div>
+        <div class="button spin-me" style="border-radius: 70px 0 50% 20px">
+          .. or to me
+        </div>
+        <p class="view-code-btn">
+          View Code
+        </p>
+        <div class="code-box">
+          <pre><code>$('.clicked').click(function(){
     //Start Simpload
     $(this).simpLoad('start');
 
@@ -59,24 +65,26 @@
         $(this).simpLoad('stop');
     }, 2000);
 });</code></pre>
-				</div>
-			</section>
+        </div>
+      </section>
 
-			<section id="multiple-box-test" class="center">
-				<span id="spin-boxes" class="button">Apply simpLoad to elements bellow</span>
-				<div id="box-container">
-					<div class="box-element"></div>
-					<div class="box-element" style="min-width: 100px; width: 150px"></div>
-					<div class="box-element" style="min-width: 400px; width: 600px"></div>
-					<div class="box-element"></div>
-					<div class="box-element"></div>
-					<div class="box-element" style="min-width: 70px; width: 100px"></div>
-				</div>
-				<p class="view-code-btn">
-					View Code
-				</p>
-				<div class="code-box">
-<pre><code>$('#button').click(function(){
+      <section id="multiple-box-test" class="center">
+        <span id="spin-boxes" class="button"
+          >Apply simpLoad to elements bellow</span
+        >
+        <div id="box-container">
+          <div class="box-element"></div>
+          <div class="box-element" style="min-width: 100px; width: 150px"></div>
+          <div class="box-element" style="min-width: 400px; width: 600px"></div>
+          <div class="box-element"></div>
+          <div class="box-element"></div>
+          <div class="box-element" style="min-width: 70px; width: 100px"></div>
+        </div>
+        <p class="view-code-btn">
+          View Code
+        </p>
+        <div class="code-box">
+          <pre><code>$('#button').click(function(){
     //Start Simpload
     $('.parent-element').simpLoad('start');
 
@@ -85,62 +93,63 @@
         $('.parent-element').simpLoad('stop');
     }, 2000);
 });</code></pre>
-				</div>
-			</section>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="simpLoad.js"></script>
 
-		</main>
-		<footer>
+  <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
 
-		</footer>
+  <script>
+    hljs.initHighlightingOnLoad()
+    $(document).ready(function() {
+      $('body').css('border', '10px #ccc solid')
 
-	</body>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
-	<script src="simpLoad.js"></script>
+      $('.view-code-btn').click(function() {
+        if (
+          $(this)
+            .next()
+            .css('display') != 'none'
+        ) {
+          console.log('a')
+          $(this)
+            .next()
+            .hide()
+        } else {
+          console.log('b')
+          $(this)
+            .next()
+            .show()
+        }
+      })
 
-	<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+      //Body demo
+      $('#spin-body').click(function() {
+        $('body').simpLoad('start')
+        setTimeout(function() {
+          $('body').simpLoad('stop')
+        }, 2000)
+      })
 
-	<script>
-		hljs.initHighlightingOnLoad();
-		$(document).ready(function(){
+      //Single element demo
+      $('.spin-me').click(function() {
+        var self = $(this)
+        self.simpLoad('start')
+        setTimeout(function() {
+          self.simpLoad('stop')
+        }, 2000)
+      })
 
-			$('body').css('border','10px #ccc solid');
-
-			$('.view-code-btn').click(function(){
-				if($(this).next().css('display') != 'none'){
-					console.log('a');
-					$(this).next().hide();
-				} else {
-					console.log('b');
-					$(this).next().show();
-				}
-			});
-
-			//Body demo
-			$('#spin-body').click(function(){
-				$('body').simpLoad('start');
-				setTimeout(function(){
-					$('body').simpLoad('stop');
-				}, 2000);
-			});
-
-			//Single element demo
-			$('.spin-me').click(function(){
-				var self = $(this);
-				self.simpLoad('start');
-				setTimeout(function(){
-					self.simpLoad('stop');
-				}, 2000);
-			});
-
-			//Multiple element demo
-			$('#spin-boxes').click(function(){
-				$('.box-element').simpLoad('start');
-				setTimeout(function(){
-					$('.box-element').simpLoad('stop');
-				}, 2000);
-			});
-
-		});
-	</script>
-
+      //Multiple element demo
+      $('#spin-boxes').click(function() {
+        $('.box-element').simpLoad('start')
+        setTimeout(function() {
+          $('.box-element').simpLoad('stop')
+        }, 2000)
+      })
+    })
+  </script>
 </html>
